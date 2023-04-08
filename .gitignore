@@ -9,6 +9,7 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
+`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=585d4a04269c34cc7d11a057cfe5f80b`
 
 # macOS
 .DS_Store

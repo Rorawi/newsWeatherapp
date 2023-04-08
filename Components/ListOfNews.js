@@ -1,13 +1,12 @@
 import React from "react";
 import { View, StyleSheet, Text, ScrollView, FlatList } from "react-native";
 import Item from "./Item";
-
 const ListOfNews = () => {
   const news = [
     {
       text: "Mr oh winding it enjoyed by between. The servants securing material goodness her.",
       id: 1,
-      icon: "bookmark",
+      icon: "heart",
       img: require("../assets/images/bee.jpg"),
       topic: 'Bees are Bees'
     },

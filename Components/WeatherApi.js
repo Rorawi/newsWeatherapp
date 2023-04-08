@@ -9,7 +9,7 @@ import {
   TextInput,
   Button,
 } from "react-native";
-import { Ionicons, Entypo } from "@expo/vector-icons";
+import { Ionicons, Entypo, MaterialCommunityIcons } from "@expo/vector-icons";
 import logo from "../assets/images/logo2.gif";
 import * as Location from "expo-location";
 import { useDispatch } from "react-redux";
@@ -124,27 +124,41 @@ const WeatherApi = () => {
                   ) : des == "Clouds" ? (
                     <Entypo name="cloud" size={64} color="gray" />
                   ) : des == "Clear" ? (
-                    <Ionicons name="partly-sunny" size={64} color="green" />
+                    <Ionicons name="sunny" size={64} color="green" />
+                  ) : des == "Haze" ? (
+                    <MaterialCommunityIcons
+                      name="weather-fog"
+                      size={64}
+                      color="green"
+                    />
                   ) : (
                     <Text>...loading</Text>
                   )}
                 </View>
                 <View style={styles.details}>
                   <View style={styles.other_descrip}>
-                    <Text> Pressure: </Text>
-                    <Text>{item.main.pressure} pa</Text>
+                    <Text style={styles.text}>
+                    <Entypo name="gauge" size={24} color="#414B5A"/>
+                      Pressure: </Text>
+                    <Text style={styles.text}>{item.main.pressure} pa</Text>
                   </View>
                   <View style={styles.other_descrip}>
-                    <Text>Humidity:</Text>
-                    <Text>{item.main.humidity}</Text>
+                    <Text style={styles.text}>
+                    <Entypo name="drop" size={24} color="#414B5A" />
+                      Humidity:  </Text>
+                    <Text style={styles.text}>{item.main.humidity}</Text>
                   </View>
                   <View style={styles.other_descrip}>
-                    <Text>Wind Speed: </Text>
-                    <Text>{item.wind.speed}</Text>
+                    <Text style={styles.text}>
+                    <MaterialCommunityIcons name="weather-windy" size={24} color="#414B5A" />
+                      Wind Speed:  </Text>
+                    <Text style={styles.text}>{item.wind.speed}</Text>
                   </View>
                   <View style={styles.other_descrip}>
-                    <Text>Weather Description:</Text>
-                    <Text>{item.weather[0].description}</Text>
+                    <Text style={styles.text}>
+                    <MaterialCommunityIcons name="weather-cloudy-alert" size={24} color="#414B5A" />
+                      Weather Description:  </Text>
+                    <Text style={styles.text}>{item.weather[0].description}</Text>
                   </View>
                 </View>
                 <TouchableOpacity>
@@ -250,19 +264,25 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     color: "green",
   },
-
-  other_descrip: {
-    fontSize: 14,
-    fontWeight: 700,
-    color: "#414B5A",
-    flexDirection:'row',
-    justifyContent:'space-evenly'
-  },
-
+  
   details: {
-    justifyContent: "space-between",
+    justifyContent: "space-around",
     alignItems: "flex-start",
   },
+
+  other_descrip: {
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignItems: 'center',
+    marginTop: 20
+  },
+
+  text: {
+    fontSize: 17,
+    fontWeight: 500,
+    color: "#414B5A",
+  }
+
 });
 
 export default WeatherApi;

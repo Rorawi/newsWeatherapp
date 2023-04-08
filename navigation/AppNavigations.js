@@ -7,6 +7,7 @@ import PreviewData from "../Components/Preview";
 import { NavigationContainer } from "@react-navigation/native";
 import Weather from "../screens/Weather";
 import Map from "../screens/Map"
+import Settings from "../screens/Settings"
 import Analytics from "../screens/Analytics";
 
 
@@ -29,6 +30,9 @@ const AppNavigations = () => {
               headerShown: false
             }}/>
             <Stack.Screen name="previewdata" component={PreviewData} options={{
+              headerShown: false
+            }}/>
+            <Stack.Screen name="settings" component={Settings} options={{
               headerShown: false
             }}/>
           </Stack.Navigator>

@@ -3,6 +3,7 @@ import { View, StyleSheet, Text, Image } from "react-native";
 import clear from "../assets/images/clear.png";
 import rain from "../assets/images/rain.png";
 import snow from "../assets/images/snow.png";
+import haze from "../assets/images/haze.png";
 import { TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
@@ -160,7 +161,7 @@ const AnalyticsItem = ({ feel, des, name, country }) => {
   const Haze = () => {
     return (
       <View style={styles.container}>
-        <Image source={rain} style={styles.img} />
+        <Image source={haze} style={styles.img} />
         <View
           style={{
             flexDirection: "row",
@@ -199,9 +200,9 @@ const AnalyticsItem = ({ feel, des, name, country }) => {
           </TouchableOpacity>
         </View>
         <Text style={[styles.activity, styles.text]}>
-          You can {randomsnowyActivities}
+          *You can {randomsnowyActivities}
         </Text>
-        <Text style={styles.text}>{randomsnowyPrecautions}</Text>
+        <Text style={styles.text}>*{randomsnowyPrecautions}</Text>
       </View>
     );
   };
@@ -216,7 +217,7 @@ const AnalyticsItem = ({ feel, des, name, country }) => {
           <View>{Clear()}</View>
         ) : des == "Clouds" ? (
           <View style={styles.View}>{Clouds()}</View>
-        ) : des == "Rainy" || "Rain" ? (
+        ) : des == "Rainy" ||des == "Rain" ? (
           <View>{Rain()}</View>
         ) : des == "Snowy" ? (
           <View>{Snowy()}</View>

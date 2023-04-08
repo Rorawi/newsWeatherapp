@@ -23,7 +23,7 @@ if(text.length <= maxLength){
       <Text style={{maxWidth: 233,fontSize: 12}}>
            {text}
         </Text>
-        <Entypo name={icon} size={20} color="black" style={styles.icon}/>
+        <Entypo name={icon} size={20} color="green" style={styles.icon}/>
       </View>
     </View>
         </TouchableOpacity>
