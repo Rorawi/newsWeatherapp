@@ -123,9 +123,9 @@ const AnalyticsItem = ({ feel, des, name, country }) => {
           </TouchableOpacity>  
                 </View>
         <Text style={[styles.activity, styles.text]}>
-         {randomcloudyActivities}
+        *{randomcloudyActivities}
         </Text>
-        <Text style={styles.text}>{randomrainyPrecautions}</Text>
+        <Text style={styles.text}>*{randomrainyPrecautions}</Text>
       </View>
     );
   };
@@ -149,9 +149,9 @@ const AnalyticsItem = ({ feel, des, name, country }) => {
           </TouchableOpacity>
         </View>
         <Text style={[styles.activity, styles.text]}>
-          You can {randomrainyActivities}
+          *You can {randomrainyActivities}
         </Text>
-        <Text style={styles.text}>{randomrainyPrecautions}</Text>
+        <Text style={styles.text}>*{randomrainyPrecautions}</Text>
       </View>
     );
   };
@@ -168,14 +168,14 @@ const AnalyticsItem = ({ feel, des, name, country }) => {
             alignItems: "center",
           }}
         >
-          <Text style={styles.weatherCondition}>It's Rainy </Text>
+          <Text style={styles.weatherCondition}>It's Hazy </Text>
           <TouchableOpacity onPress={()=> {
             navigation.navigate('weather')
           }}>
           <Text style={styles.feel}>Feels like {feel}°C</Text>
           </TouchableOpacity>
         </View>
-        <Text style={styles.text}>{randomhazePrecautions}</Text>
+        <Text style={styles.text}>*{randomhazePrecautions}</Text>
       </View>
     );
   };

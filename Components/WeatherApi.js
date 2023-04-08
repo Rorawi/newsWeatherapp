@@ -119,28 +119,34 @@ const WeatherApi = () => {
                   <View>
                     <Text>{des}</Text>
                   </View>
-                  {des == "Rainy" || "Rain" ? (
+                  {des == "Rainy" || des == "Rain" ? (
                     <Ionicons name="rainy" size={64} color="gray" />
                   ) : des == "Clouds" ? (
                     <Entypo name="cloud" size={64} color="gray" />
                   ) : des == "Clear" ? (
-                    <Ionicons name="cloud" size={64} color="green" />
-                  ) : <Text>...loading</Text>}
+                    <Ionicons name="partly-sunny" size={64} color="green" />
+                  ) : (
+                    <Text>...loading</Text>
+                  )}
                 </View>
-                <Text style={styles.other_descrip}>
-                  Pressure: <Text>{item.main.pressure} pa</Text>
-                </Text>
-                <Text style={styles.other_descrip}>
-                  Humidity: <Text>{item.main.humidity}</Text>
-                </Text>
-                <Text style={styles.other_descrip}>
-                  Wind Speed: <Text>{item.wind.speed}</Text>
-                </Text>
-                <Text style={styles.other_descrip}>
-                  Weather Description:{" "}
-                  <Text>{item.weather[0].description}</Text>
-                </Text>
-
+                <View style={styles.details}>
+                  <View style={styles.other_descrip}>
+                    <Text> Pressure: </Text>
+                    <Text>{item.main.pressure} pa</Text>
+                  </View>
+                  <View style={styles.other_descrip}>
+                    <Text>Humidity:</Text>
+                    <Text>{item.main.humidity}</Text>
+                  </View>
+                  <View style={styles.other_descrip}>
+                    <Text>Wind Speed: </Text>
+                    <Text>{item.wind.speed}</Text>
+                  </View>
+                  <View style={styles.other_descrip}>
+                    <Text>Weather Description:</Text>
+                    <Text>{item.weather[0].description}</Text>
+                  </View>
+                </View>
                 <TouchableOpacity>
                   <Ionicons name="refresh-sharp" size={24} color="green" />
                 </TouchableOpacity>
@@ -249,6 +255,13 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: 700,
     color: "#414B5A",
+    flexDirection:'row',
+    justifyContent:'space-evenly'
+  },
+
+  details: {
+    justifyContent: "space-between",
+    alignItems: "flex-start",
   },
 });
 
