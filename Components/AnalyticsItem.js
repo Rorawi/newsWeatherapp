@@ -37,7 +37,7 @@ const AnalyticsItem = ({ feel, des, name, country }) => {
   const rainyActivities = ["Play in the puddles", "Indoor games"];
 
   const cloudyActivities = [
-    "You can going for a walk",
+    "You can go for a walk",
     "It's also a good opportunity to take some moody and atmospheric photos",
     "Do some indoor activities like reading, cooking or playing board games until it subsides.",
   ];

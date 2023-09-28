@@ -106,64 +106,71 @@ const WeatherApi = () => {
                     />
                   </TouchableOpacity>
                 </View>
+
                 <Text style={styles.location}>
                   <Text style={styles.apiAns}>
                     <Entypo name="location-pin" size={24} color="green" />{" "}
                     {item.name}
                   </Text>
                 </Text>
+
                 <View style={styles.feelsLike}>
-                  <Text style={styles.degreeText}>
+                 <View>
+                 <Text style={styles.degreeText}>
                     {feelsLike}°<Text style={{ fontSize: 40 }}>C</Text>
                   </Text>
-                  <View>
-                    <Text>{des}</Text>
-                  </View>
-                  {des == "Rainy" || des == "Rain" ? (
-                    <Ionicons name="rainy" size={64} color="gray" />
-                  ) : des == "Clouds" ? (
-                    <Entypo name="cloud" size={64} color="gray" />
+                  {/* <Text style={{fontSize:20,marginLeft:10,marginTop: 34}}>{des}</Text> */}
+                 </View>
+
+                  <View style={{flexDirection:'column', justifyContent:'flex-start',justifyContent:'flex-start'}}>
+                     {des == "Rainy" || des == "Rain" ? (
+                       <Ionicons name="rainy" size={64} color="gray" />
+                       ) : des == "Clouds" ? (
+                         <Entypo name="cloud" size={64} color="gray" />
                   ) : des == "Clear" ? (
                     <Ionicons name="sunny" size={64} color="green" />
-                  ) : des == "Haze" ? (
+                    ) : des == "Haze" ? (
                     <MaterialCommunityIcons
                       name="weather-fog"
                       size={64}
                       color="green"
-                    />
-                  ) : (
-                    <Text>...loading</Text>
-                  )}
+                      />
+                      ) : (
+                        <Text>...loading</Text>
+                        )}
+                        <Text style={{fontSize:20,marginLeft:10,marginTop: 30}}>{des}</Text>
+                  </View>
+                 
                 </View>
                 <View style={styles.details}>
                   <View style={styles.other_descrip}>
                     <Text style={styles.text}>
-                    <Entypo name="gauge" size={24} color="#414B5A"/>
-                      Pressure: </Text>
+                    <Entypo name="gauge" size={17} color="#414B5A"/>{"  "} 
+                         Pressure: </Text>
                     <Text style={styles.text}>{item.main.pressure} pa</Text>
                   </View>
                   <View style={styles.other_descrip}>
                     <Text style={styles.text}>
-                    <Entypo name="drop" size={24} color="#414B5A" />
+                    <Entypo name="drop" size={17} color="#414B5A" /> {" "}
                       Humidity:  </Text>
                     <Text style={styles.text}>{item.main.humidity}</Text>
                   </View>
                   <View style={styles.other_descrip}>
                     <Text style={styles.text}>
-                    <MaterialCommunityIcons name="weather-windy" size={24} color="#414B5A" />
+                    <MaterialCommunityIcons name="weather-windy" size={17} color="#414B5A" /> {" "}
                       Wind Speed:  </Text>
                     <Text style={styles.text}>{item.wind.speed}</Text>
                   </View>
                   <View style={styles.other_descrip}>
                     <Text style={styles.text}>
-                    <MaterialCommunityIcons name="weather-cloudy-alert" size={24} color="#414B5A" />
+                    <MaterialCommunityIcons name="weather-cloudy-alert" size={17} color="#414B5A" /> {" "}
                       Weather Description:  </Text>
                     <Text style={styles.text}>{item.weather[0].description}</Text>
                   </View>
                 </View>
-                <TouchableOpacity>
+                {/* <TouchableOpacity>
                   <Ionicons name="refresh-sharp" size={24} color="green" />
-                </TouchableOpacity>
+                </TouchableOpacity> */}
               </View>
             );
           }}
@@ -227,8 +234,9 @@ const styles = StyleSheet.create({
   },
 
   degreeText: {
-    fontSize: 64,
+    fontSize: 80,
     fontWeight: 500,
+    color:'#333'
   },
 
   logo: {
@@ -274,11 +282,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignItems: 'center',
-    marginTop: 20
+    marginTop: 15
   },
 
   text: {
-    fontSize: 17,
+    fontSize: 15,
     fontWeight: 500,
     color: "#414B5A",
   }

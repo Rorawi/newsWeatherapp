@@ -11,7 +11,7 @@ const ListOfNews = () => {
       topic: 'Bees are Bees'
     },
     {
-      text: "Mr ah winding it enjoyed by between. The servants securing material goodness her. Saw themselves ten are possession. So endeavor to continue cheerful doubtful we to. Turned advice the set vanity why mutual. Reasonably if conviction on be unsatiable discretion apartments delightful. Are melancholy appearance stimulated occasional entreaties end. Shy ham had esteem happen active county. Winding morning am shyness evident to. Garrets because elderly new manners however one village she.",
+      text: "Mr ah winding it enjoyed by between. The servants securing material goodness her. Saw themselves ten are possession. So endeavor to continue cheerful doubtful we to. Turned advice the set vanity why mutual. Reasonably if conviction on be unsatiable discretion apartments delightful. Are melancholy appearance stimulated occasional entreaties end. Shy ham had esteem happen active county. Winding morning am shyness evident to. Garrets because elderly new man",
       id: 2,
       icon: "bookmark",
       img: require("../assets/images/apples.jpg"),
@@ -57,7 +57,7 @@ const ListOfNews = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // marginTop: 60
+    marginBottom: 60
     
   },
 });

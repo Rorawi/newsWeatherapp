@@ -9,7 +9,7 @@ import Weather from "../screens/Weather";
 import Map from "../screens/Map"
 import Settings from "../screens/Settings"
 import Analytics from "../screens/Analytics";
-
+import Camera from '../screens/Camera';
 
 const Stack = createStackNavigator()
 
@@ -18,6 +18,9 @@ const AppNavigations = () => {
         <NavigationContainer>
           <Stack.Navigator>
             <Stack.Screen name="news" component={News} options={{
+              headerShown: false
+            }}/>
+            <Stack.Screen name="camera" component={Camera} options={{
               headerShown: false
             }}/>
             <Stack.Screen name="weather" component={Weather} options={{

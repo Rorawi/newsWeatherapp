@@ -1,0 +1,6 @@
+fresh_apple
+fresh_banana
+fresh_orange
+stale_apple
+stale_banana
+stale_orange

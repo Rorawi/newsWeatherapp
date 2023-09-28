@@ -18,6 +18,18 @@ const BottomBar = () => {
       <TouchableOpacity
         style={styles.bottomBarButton}
         onPress={() => {
+          navigation.navigate("camera");
+        }}
+      >
+        <MaterialCommunityIcons
+          name="camera"
+          size={24}
+          color="green"
+        />
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.bottomBarButton}
+        onPress={() => {
           navigation.navigate("weather");
         }}
       >

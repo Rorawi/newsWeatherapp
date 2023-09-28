@@ -3,5 +3,11 @@ module.exports = function(api) {
   return {
     presets: ['babel-preset-expo'],
     
-  };
+  }
 };
+
+// module.exports = {
+//   resolver: {
+//     assetExts: ['db', 'mp3', 'ttf', 'png', 'jpg', 'jpeg', 'gif', 'webp'],
+//   },
+// };
